@@ -4,6 +4,485 @@
         <name>QJW</name>
     </assembly>
     <members>
+        <member name="T:ClayObject.Clay">
+            <summary>
+            粘土对象
+            </summary>
+        </member>
+        <member name="M:ClayObject.Clay.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ClayObject.Clay.#ctor(System.Xml.Linq.XElement,ClayObject.Clay.JsonType)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="element"></param>
+            <param name="type"></param>
+        </member>
+        <member name="P:ClayObject.Clay.IsObject">
+            <summary>
+            是否是 Object 类型
+            </summary>
+        </member>
+        <member name="P:ClayObject.Clay.IsArray">
+            <summary>
+            是否是 Array 类型
+            </summary>
+        </member>
+        <member name="P:ClayObject.Clay.XmlElement">
+            <summary>
+            XML 元素
+            </summary>
+        </member>
+        <member name="M:ClayObject.Clay.Object">
+            <summary>
+            创建一个超级类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Object(System.Object)">
+            <summary>
+            基于现有类型创建一个超级类型
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Parse(System.String)">
+            <summary>
+            将 Json 转换成动态类型
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Parse(System.String,System.Text.Encoding)">
+            <summary>
+            将 Json 转换成动态类型
+            </summary>
+            <param name="json"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Parse(System.IO.Stream)">
+            <summary>
+            将 Steam 转换成动态类型
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Parse(System.IO.Stream,System.Text.Encoding)">
+            <summary>
+            将 Steam 转换成动态类型
+            </summary>
+            <param name="stream"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Serialize(System.Object)">
+            <summary>
+            序列化对象
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.IsDefined(System.String)">
+            <summary>
+            是否定义某个键
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.IsDefined(System.Int32)">
+            <summary>
+            判断数组索引是否存在
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Delete(System.String)">
+            <summary>
+            删除键
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Delete(System.Int32)">
+            <summary>
+            根据索引删除元素
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Deserialize``1">
+            <summary>
+            反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.TryInvoke(System.Dynamic.InvokeBinder,System.Object[],System.Object@)">
+            <summary>
+            删除
+            </summary>
+            <param name="binder"></param>
+            <param name="args"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.TryInvokeMember(System.Dynamic.InvokeMemberBinder,System.Object[],System.Object@)">
+            <summary>
+            判断是否定义
+            </summary>
+            <param name="binder"></param>
+            <param name="args"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.TryConvert(System.Dynamic.ConvertBinder,System.Object@)">
+            <summary>
+            支持 Foreach 遍历
+            </summary>
+            <param name="binder"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.TryGetIndex(System.Dynamic.GetIndexBinder,System.Object[],System.Object@)">
+            <summary>
+            获取索引值
+            </summary>
+            <param name="binder"></param>
+            <param name="indexes"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            获取成员值
+            </summary>
+            <param name="binder"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.TrySetIndex(System.Dynamic.SetIndexBinder,System.Object[],System.Object)">
+            <summary>
+            设置索引
+            </summary>
+            <param name="binder"></param>
+            <param name="indexes"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+            <summary>
+            设置成员
+            </summary>
+            <param name="binder"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.GetDynamicMemberNames">
+            <summary>
+            获取动态成员名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.ToString">
+            <summary>
+            重写 .ToString()
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Solidify">
+            <summary>
+            固化粘土，也就是直接输出对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Solidify``1">
+            <summary>
+            固化粘土，也就是直接输出对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:ClayObject.Clay.JsonType">
+            <summary>
+            JSON 类型
+            </summary>
+        </member>
+        <member name="M:ClayObject.Clay.ToValue(System.Xml.Linq.XElement)">
+            <summary>
+            XElement 转动态类型
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.GetJsonType(System.Object)">
+            <summary>
+            获取 JSON 类型
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.CreateTypeAttr(ClayObject.Clay.JsonType)">
+            <summary>
+            创建类型属性
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.CreateJsonNode(System.Object)">
+            <summary>
+            创建 JSON 节点
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.CreateXArray``1(``0)">
+            <summary>
+            创建 XStreamingElement 对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.CreateXObject(System.Object)">
+            <summary>
+            创建 XStreamingElement 对象
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.CreateJsonString(System.Xml.Linq.XStreamingElement)">
+            <summary>
+            创建 JSON 字符串
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ClayObject.Clay.jsonType">
+            <summary>
+            JSON 类型
+            </summary>
+        </member>
+        <member name="M:ClayObject.Clay.TryGet(System.Xml.Linq.XElement,System.Object@)">
+            <summary>
+            读取值
+            </summary>
+            <param name="element"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.TrySet(System.String,System.Object)">
+            <summary>
+            设置值
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.TrySet(System.Int32,System.Object)">
+            <summary>
+            设置值
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.Deserialize(System.Type)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.DeserializeValue(System.Xml.Linq.XElement,System.Type)">
+            <summary>
+            反序列化值
+            </summary>
+            <param name="element"></param>
+            <param name="elementType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.DeserializeObject(System.Type)">
+            <summary>
+            反序列化对象
+            </summary>
+            <param name="targetType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Clay.DeserializeArray(System.Type)">
+            <summary>
+            序列化数组
+            </summary>
+            <param name="targetType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ClayObject.Extensions.ExpandoObjectExtensions">
+            <summary>
+            ExpandoObject 对象拓展
+            </summary>
+        </member>
+        <member name="M:ClayObject.Extensions.ExpandoObjectExtensions.ToExpandoObject(System.Object)">
+            <summary>
+            将对象转 ExpandoObject 类型
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ExpandoObjectExtensions.RemoveProperty(System.Dynamic.ExpandoObject,System.String)">
+            <summary>
+            移除 ExpandoObject 对象属性
+            </summary>
+            <param name="expandoObject"></param>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:ClayObject.Extensions.ExpandoObjectExtensions.Empty(System.Dynamic.ExpandoObject)">
+            <summary>
+            判断 ExpandoObject 是否为空
+            </summary>
+            <param name="expandoObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ExpandoObjectExtensions.HasProperty(System.Dynamic.ExpandoObject,System.String)">
+            <summary>
+            判断 ExpandoObject 是否拥有某属性
+            </summary>
+            <param name="expandoObject"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ExpandoObjectExtensions.ShallowCopy(System.Dynamic.ExpandoObject)">
+            <summary>
+            实现 ExpandoObject 浅拷贝
+            </summary>
+            <param name="expandoObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ExpandoObjectExtensions.DeepCopy(System.Dynamic.ExpandoObject)">
+            <summary>
+            实现 ExpandoObject 深度拷贝
+            </summary>
+            <param name="expandoObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ExpandoObjectExtensions.Copy(System.Dynamic.ExpandoObject,System.Boolean)">
+            <summary>
+            拷贝 ExpandoObject 对象
+            </summary>
+            <param name="original"></param>
+            <param name="deep"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ClayObject.Extensions.ObjectExtensions">
+            <summary>
+            对象拓展类
+            </summary>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.ConvertToDateTime(System.DateTimeOffset)">
+            <summary>
+            将 DateTimeOffset 转换成 DateTime
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.ConvertToDateTimeOffset(System.DateTime)">
+            <summary>
+            将 DateTime 转换成 DateTimeOffset
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.IsRichPrimitive(System.Type)">
+            <summary>
+            判断是否是富基元类型
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.AddOrUpdate``1(System.Collections.Generic.Dictionary{System.String,``0},System.Collections.Generic.Dictionary{System.String,``0})">
+            <summary>
+            合并两个字典
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dic">字典</param>
+            <param name="newDic">新字典</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.IsValueTuple(System.Type)">
+            <summary>
+            判断是否是元组类型
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.IsAsync(System.Reflection.MethodInfo)">
+            <summary>
+            判断方法是否是异步
+            </summary>
+            <param name="method">方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.IsAsync(System.Type)">
+            <summary>
+            判断类型是否是异步类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.HasImplementedRawGeneric(System.Type,System.Type)">
+            <summary>
+            判断类型是否实现某个泛型
+            </summary>
+            <param name="type">类型</param>
+            <param name="generic">泛型类型</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.IsAnonymous(System.Object)">
+            <summary>
+            判断是否是匿名类型
+            </summary>
+            <param name="obj">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.GetAncestorTypes(System.Type)">
+            <summary>
+            获取所有祖先类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.GetRealReturnType(System.Reflection.MethodInfo)">
+            <summary>
+            获取方法真实返回类型
+            </summary>
+            <param name="method"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.ToTitleCase(System.String)">
+            <summary>
+            首字母大写
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.ChangeType``1(System.Object)">
+            <summary>
+            将一个对象转换为指定类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClayObject.Extensions.ObjectExtensions.ChangeType(System.Object,System.Type)">
+            <summary>
+            将一个对象转换为指定类型
+            </summary>
+            <param name="obj">待转换的对象</param>
+            <param name="type">目标类型</param>
+            <returns>转换后的对象</returns>
+        </member>
         <member name="T:QJW.Common.CookieHelper">
             <summary>
             Cookie帮助相关类
